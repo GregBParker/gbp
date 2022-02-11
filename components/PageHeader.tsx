@@ -36,12 +36,14 @@ const PageHeader: React.FC<IProps> = ({
   return (
     <Wrapper sticky={sticky}>
       <Container small={small}>
-        <Flex align='flex-end' justify='space-between'>
-          <Box spacing='16px'>
-            <Heading size='large'>{title}</Heading>
-            <Paragraph size='large' color='light'>
-              {description}
-            </Paragraph>
+        <Flex align="flex-end" justify="space-between">
+          <Box spacing="16px">
+            <Heading size="large">{title}</Heading>
+            {description && (
+              <Paragraph size="large" color="light">
+                {description}
+              </Paragraph>
+            )}
           </Box>
           {actions}
         </Flex>
@@ -83,4 +85,8 @@ const Wrapper = styled.div<{
   }
 
   ${p => p.sticky && sticky};
+
+  @media screen and (max-width: 1023px) {
+    width: 100%;
+  }
 `

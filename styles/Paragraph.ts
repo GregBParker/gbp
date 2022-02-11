@@ -11,7 +11,7 @@ line-height: 28px;
 `
 
 const light = `
-  color: var(--neutral-400);
+  color: var(--neutral-500);
 `
 
 const strong = `
@@ -19,10 +19,18 @@ const strong = `
   font-weight: 600;
 `
 
+const detail = `
+  font-weight: normal;
+  color: var(--neutral-500);
+  font-style: italic;
+  font-size: 14px;
+`
+
 const Paragraph = styled.p<{
   size?: 'small' | 'large'
   color?: 'light'
   strong?: boolean
+  fontStyle?: 'detail'
 }>`
   font-size: 16px;
   line-height: 28px;
@@ -32,6 +40,7 @@ const Paragraph = styled.p<{
   ${p => p.size === 'large' && large}
   ${p => p.color === 'light' && light}
   ${p => p.strong && strong}
+  ${p => p.fontStyle === 'detail' && detail}
 `
 
 export default Paragraph

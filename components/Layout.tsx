@@ -23,4 +23,11 @@ const Main = styled.main`
   box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
   width: calc(100vw - 290px);
   padding-bottom: 56px;
+
+  @media screen and (max-width: 1023px) {
+    width: 100vw;
+    border: none;
+    box-shadow: none;
+    min-height: 100vh;
+  }
 `
